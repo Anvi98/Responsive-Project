@@ -1,12 +1,17 @@
 body {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 5px;
   padding: 0;
+  margin:0;
 }
 
-header {
-  max-width: 100%;
+#logo-top {
+  z-index: 10001;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 140px;
+  height: 8%;
 }
 
 footer {
@@ -24,9 +29,24 @@ footer {
 
 }
 
+
+#searching-m,
+#menu-top {
+  width: 30px;
+  padding-left: 30px;
+  margin-top: 10px;
+  float: right;
+}
+
+#searching-m {
+  margin-right: 15px;
+}
+
 #logo {
+  
   width: 30px;
   position: relative;
+  z-index: 10001;
   
 }
 
@@ -38,7 +58,45 @@ main {
   grid-row: 1 / 4;
 }
 
+.top-header {
+  height: 70px;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
+  margin: 0;
+}
+
+.info-top {
+  z-index: 1001;
+  top: 60px;
+  position: fixed;
+  width: 100%;
+  background-color:#fd3;
+  text-align: center;
+  font-size: 13px;
+  padding: 20px;
+  margin: 0;
+}
+
+.empty {
+  position: relative;
+  margin-bottom: 200px;
+}
+.arrow {
+  max-width: 10px;
+}
+
+#searching-tablet,
+.header-top,
+.header-bottom ul {
+  display: none;
+}
+
+
+
 .highlight-grid {
+  padding-top: 210px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: minmax(250px, auto);
@@ -52,28 +110,38 @@ main {
   color: white;
 }
 
-.article-1 {
-  background-image: url("img/article-1.jpeg");
+.article-1 div #logo-high {
+  display: none;
 }
 
-.article-1 ul {
+
+.article-1 {
+  background-image: url("img/article-1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.article-1 ul,
+.article-2 ul,
+.article-3 ul {
   padding: 0;
   display: inline;
   color: rgb(139, 139, 139);
   padding-left: 10px;
 }
 
-.article-1 div #logo-high {
-  display: none;
-}
 
-.article-1 ul li {
+.article-1 ul li,
+.article-2 ul li,
+.article-3 ul li {
   display: inline-block;
   list-style: none;
   padding-right: 10px;
 }
 
-.article-1 div h2 {
+.article-1 div h2,
+.article-2 div h2,
+.article-3 ul h2 {
   color: white;
   margin-top: 160px;
   margin-bottom: 0;
@@ -83,7 +151,10 @@ main {
 .article-2 {
   background-image: url("img/article-2.webp");
   background-size: cover;
+    background-repeat: no-repeat;
 }
+
+
 
 .article-3 {
   background-image: url("img/article-3.webp");
@@ -197,7 +268,7 @@ main {
 }
 
 .social {
-  width: 30px;
+  width: 20px;
   background-color: #fff;
 }
 
@@ -216,7 +287,6 @@ main {
 
 .footer_top ul {
   display: flex;
-  padding: 10px;
   margin: 0;
   width: 50%;
   position: relative;
@@ -238,7 +308,84 @@ main {
   padding: 50px;
 }
 
-@media screen and (min-width: 762px){
+@media screen and (min-width: 804px){
+
+  body {
+    margin: 0;
+  }
+
+  .info-top {
+    top: 100px;
+  }
+
+  .info-top {
+    text-align: left;
+  }
+
+  .top-header {
+    height: 100px;
+  }
+
+  #logo-top {
+    width: 115px;
+    height: 11%;
+  }
+
+  #menu-top,
+  #searching-m {
+    display: none;
+  }
+  
+  .header-bottom ul {
+    display: flex;
+    list-style: none;
+    padding: 2px 100px;
+  }
+
+  .ul-1 {
+    margin-left: 70px;
+    order: 1;
+    flex:10%;
+  }
+
+  .ul-2 {
+    order: 2;
+    margin-right: 10px;
+  }
+
+  .header-top {
+    display: flex;
+    margin: 0;
+    background-color: black;
+    font-size: 14px;
+    color: rgb(184, 184, 184);
+
+  }
+
+  .header-top ul {
+    display: flex;
+    list-style: none;
+  }
+
+  .header-top ul li {
+    padding-left: 10px;
+  }
+
+  .header-bottom ul li {
+    font-size: 15px;
+    padding-left: 20px;
+    color: #555;
+  }
+
+  #searching-tablet{
+    display: inline;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    width: 25px;
+    float: right;
+  }
+
   .highlight-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -250,6 +397,10 @@ main {
   .article-1 {
     grid-column: 1 / 4;
     grid-row: 1 / 3;
+  }
+
+  .article-1 div h2 {
+    font-size: 2.5em;
   }
 
   .article-1 div #logo-high {
@@ -272,6 +423,32 @@ main {
   .fund_wrap {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+  }
+  .info-top {
+    top: 100px;
+  }
+
+  #logo-top {
+    display: none;
+  }
+
+  .ul-1 {
+    margin-left: 0;
+    padding-left: 15px;
+  }
+
+  .header-bottom ul {
+    display: flex;
+    list-style: none;
+    padding: 2px 10px;
+    margin: 4px;
+  }
+  .header-bottom ul li {
+    padding: 10px;
+  }
+
+  .article-1 div h2 {
+    font-size: 3em;
   }
 
   .bar {
@@ -316,6 +493,10 @@ main {
     grid-gap: 10px;
   }
 
+  .article-1 div h2 {
+    font-size: 3.5em;
+  }
+
   .latest_funding header {
     display: flex;
   }
@@ -345,7 +526,7 @@ main {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
   }
-
+  
   .fund-4 {
     display: block;
     grid-column: 4 / 5;
